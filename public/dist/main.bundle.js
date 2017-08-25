@@ -406,7 +406,7 @@ var MainComponent = (function () {
         }
         this.player.clicks++;
         this.socket.emit('update-player', { player: this.player, position: this.position });
-        this.socket.emit('click-update', { position: i, counter: this.counter });
+        this.socket.emit('click-update', { board: this.board, counter: this.counter });
     };
     return MainComponent;
 }());

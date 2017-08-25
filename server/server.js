@@ -34,13 +34,14 @@ io.sockets.on('connection', function(socket){
 	})
 
 	socket.on('click-update', function(data){
-		server_data = data;
+		server_data.board[data.position] = !server_data.board[data.position];
+		server_data.counter = data.counter;
 		socket.broadcast.emit('new-update', server_data);
-		if (server_data.counter == 0) {
+		if (server_data.counter <= 0) {
 			reset()
 			io.emit("blue-wins");
 		}
-		if (server_data.counter == 18){
+		if (server_data.counter >= 54){
 			reset()
 			io.emit("red-wins");
 		}

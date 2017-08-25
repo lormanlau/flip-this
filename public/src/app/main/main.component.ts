@@ -13,7 +13,7 @@ export class MainComponent implements OnInit {
 	board = [];
 	counter = 0;
 	player = { team: false, clicks: 0 };
-	socket = io('http://ec2-54-198-176-200.compute-1.amazonaws.com:8000');
+	socket = io('http://localhost:8000');
 	players = [];
   position = 0
   constructor(private _player:PlayerService, private route: Router) { }
@@ -50,6 +50,6 @@ export class MainComponent implements OnInit {
   	}
   	this.player.clicks++;
   	this.socket.emit('update-player', {player: this.player, position: this.position})
-  	this.socket.emit('click-update', {board: this.board, counter: this.counter});
+  	this.socket.emit('click-update', {position: i, counter: this.counter});
   }
 }

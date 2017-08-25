@@ -1,4 +1,4 @@
-#main {
+#main *{
 	display: inline-block;
 	margin: 5px;
 }
@@ -12,9 +12,7 @@ tr {
 	display: inline-block;
 }
 .box {
-	height: 80px;
-	width: 80px;
-	display:inline-block;
+	height: 5vh;
 	background-color: blue;
 }
 .red {

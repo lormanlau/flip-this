@@ -106,7 +106,11 @@ AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+        styles: [__webpack_require__("../../../../../src/app/app.component.css")],
+        styles: [
+            "../node_modules/angular-material/angular-material.css",
+            "styles.css"
+        ]
     })
 ], AppComponent);
 
@@ -319,7 +323,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#main {\n\tdisplay: inline-block;\n\tmargin: 5px;\n}\n#tables {\n\tvertical-align: top;\n}\n#tables *{\n\n}\ntr {\n\tdisplay: inline-block;\n}\n.box {\n\theight: 80px;\n\twidth: 80px;\n\tdisplay:inline-block;\n\tbackground-color: blue;\n}\n.red {\n\tbackground-color: red;\n}\n", ""]);
+exports.push([module.i, "#main *{\n\tdisplay: inline-block;\n\tmargin: 5px;\n}\n#tables {\n\tvertical-align: top;\n}\n#tables *{\n\n}\ntr {\n\tdisplay: inline-block;\n}\n.box {\n\theight: 5vh;\n\tbackground-color: blue;\n}\n.red {\n\tbackground-color: red;\n}\n", ""]);
 
 // exports
 
@@ -332,7 +336,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/main.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id='tables'>\n\t<table>\n\t\t<tr>\n\t\t\t<th>Red Team</th>\n\t\t</tr>\n\t\t<tr *ngFor=\"let play of players\">\n\t\t\t<td *ngIf=\"play.team\">{{play.name}} {{play.clicks}}</td>\n\t\t</tr>\n\t</table>\n\t<table>\n\t\t<tr>\n\t\t\t<th>Blue Team</th>\n\t\t</tr>\n\t\t<tr *ngFor=\"let play of players\">\n\t\t\t<td *ngIf=\"!play.team\">{{play.name}} {{play.clicks}}</td>\n\t\t</tr>\n\t</table>\n</div>\n<div id=\"main\" *ngFor=\"let box of board; let i = index\">\n\t<div (click)=\"toggle(i)\" [ngClass]=\"{'red': box, 'box': true}\"></div>\n</div>\n"
+module.exports = "<div id='tables'>\n\t<table>\n\t\t<tr>\n\t\t\t<th>Red Team</th>\n\t\t</tr>\n\t\t<tr *ngFor=\"let play of players\">\n\t\t\t<td *ngIf=\"play.team\">{{play.name}} {{play.clicks}}</td>\n\t\t</tr>\n\t</table>\n\t<table>\n\t\t<tr>\n\t\t\t<th>Blue Team</th>\n\t\t</tr>\n\t\t<tr *ngFor=\"let play of players\">\n\t\t\t<td *ngIf=\"!play.team\">{{play.name}} {{play.clicks}}</td>\n\t\t</tr>\n\t</table>\n</div>\n<div id=\"main\" class=\"row\">\n\t<div *ngFor=\"let box of board; let i = index\" (click)=\"toggle(i)\" [ngClass]=\"{'red': box, 'box': true, 'col s1': true, 'hoverable': true }\"></div>\n</div>\n"
 
 /***/ }),
 
@@ -366,7 +370,7 @@ var MainComponent = (function () {
         this.board = [];
         this.counter = 0;
         this.player = { team: false, clicks: 0 };
-        this.socket = __WEBPACK_IMPORTED_MODULE_1_socket_io_client__('http://ec2-54-198-176-200.compute-1.amazonaws.com:8000');
+        this.socket = __WEBPACK_IMPORTED_MODULE_1_socket_io_client__('http://localhost:8000');
         this.players = [];
         this.position = 0;
     }

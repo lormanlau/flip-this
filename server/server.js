@@ -15,7 +15,7 @@ var server = app.listen(8000, function(){
 
 var io = require('socket.io').listen(server);
 
-var server_data = {board: [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false], counter: 9}
+var server_data = {board: [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false], counter: 27}
 var players = [];
 
 io.sockets.on('connection', function(socket){
@@ -53,7 +53,7 @@ io.sockets.on('connection', function(socket){
 
 
 	function reset(){
-		server_data = {board: [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false], counter: 9}
+		server_data = {board: [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false], counter: 27}
 		players = [];
 	}
 

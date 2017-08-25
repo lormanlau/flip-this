@@ -16,6 +16,6 @@
 		</tr>
 	</table>
 </div>
-<div id="main" *ngFor="let box of board; let i = index">
-	<div (click)="toggle(i)" [ngClass]="{'red': box, 'box': true}"></div>
+<div id="main" class="row">
+	<div *ngFor="let box of board; let i = index" (click)="toggle(i)" [ngClass]="{'red': box, 'box': true, 'col s1': true, 'hoverable': true }"></div>
 </div>

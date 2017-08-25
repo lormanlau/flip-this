@@ -5,12 +5,12 @@ var path = require('path');
 
 app.use(express.static(path.join(__dirname,'./../public/dist')));
 
-var server = app.listen(8000, function(){
-	console.log('Hailing Frequencies Open on port 8000');
+app.all("*", (req, res, next) => {
+		res.sendFile(path.resolve("./../public/dist/index.html"))
 });
 
-app.all("*", (req, res, next) => {
-		res.sendFile(path.resolve("./public/dist/index.html"))
+var server = app.listen(8000, function(){
+	console.log('Hailing Frequencies Open on port 8000');
 });
 
 var io = require('socket.io').listen(server);

@@ -13,7 +13,7 @@ export class MainComponent implements OnInit {
 	board = [];
 	counter = 0;
 	player = { team: false, clicks: 0 };
-	socket = io('http://54.198.176.200');
+	socket = io('http://localhost:8000');
 	players = [];
   position = 0
   constructor(private _player:PlayerService, private route: Router) { }

@@ -370,7 +370,7 @@ var MainComponent = (function () {
         this.board = [];
         this.counter = 0;
         this.player = { team: false, clicks: 0 };
-        this.socket = __WEBPACK_IMPORTED_MODULE_1_socket_io_client__('http://localhost:8000');
+        this.socket = __WEBPACK_IMPORTED_MODULE_1_socket_io_client__('http://ec2-54-198-176-200.compute-1.amazonaws.com:8000');
         this.players = [];
         this.position = 0;
     }

@@ -1,0 +1,21 @@
+<div id='tables'>
+	<table>
+		<tr>
+			<th>Red Team</th>
+		</tr>
+		<tr *ngFor="let play of players">
+			<td *ngIf="play.team">{{play.name}} {{play.clicks}}</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<th>Blue Team</th>
+		</tr>
+		<tr *ngFor="let play of players">
+			<td *ngIf="!play.team">{{play.name}} {{play.clicks}}</td>
+		</tr>
+	</table>
+</div>
+<div id="main" *ngFor="let box of board; let i = index">
+	<div (click)="toggle(i)" [ngClass]="{'red': box, 'box': true}"></div>
+</div>

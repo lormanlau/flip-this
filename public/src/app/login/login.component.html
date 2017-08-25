@@ -1,0 +1,28 @@
+<div>
+	<form #form="ngForm">Please enter a name:
+		<input 
+		type="text" 
+		name="name"
+		minlength="1" 
+		required
+		[(ngModel)]="player.name"
+		#name="ngModel">
+		<span *ngIf="name.errors && name.dirty">Requires at least one character</span>
+		<p>
+			<input 
+			(click)="redTeam()" 
+			[disabled]="!form.valid" 
+			[routerLink]="['/main']" 
+			type="submit" 
+			value="Red Team"
+			>
+			<input 
+			(click)="blueTeam()" 
+			[disabled]="!form.valid" 
+			[routerLink]="['/main']" 
+			type="submit" 
+			value="Blue Team"
+			>
+		</p>
+	</form>
+</div>

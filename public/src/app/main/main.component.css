@@ -1,0 +1,22 @@
+#main {
+	display: inline-block;
+	margin: 5px;
+}
+#tables {
+	vertical-align: top;
+}
+#tables *{
+
+}
+tr {
+	display: inline-block;
+}
+.box {
+	height: 80px;
+	width: 80px;
+	display:inline-block;
+	background-color: blue;
+}
+.red {
+	background-color: red;
+}
